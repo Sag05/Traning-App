@@ -78,7 +78,6 @@ namespace Traningapp
             CA.Visible = false;
             Check.Visible = true;
             LoadNext();
-            //Question.Text = Words[qnr * 2];
         }
     }
 }
