@@ -30,14 +30,21 @@ namespace Traningapp
 
             LoadNext();
             PathButton.Visible = false;
-
+            AnswerText.Visible = true;
+            Check.Visible = true;
+            Question.Visible = true;
 
         }
 
         private void LoadNext()
         {
-            Question.Text = Words[qnr * 2];  
+            Question.Text = Words[qnr * 2];
+            if (Words[qnr * 2] == "") ;
+            {
+                againb.Visible = true;
+                newt.Visible = true;
 
+            }
         }
 
         private void AnswerText_TextChanged(object sender, EventArgs e)
@@ -54,9 +61,9 @@ namespace Traningapp
             Check.Visible = false;
             CA.Visible = true;
             Nextb.Visible = true;
-            CRA.Text = Words[qnr + 1];
+            CRA.Text = Words[qnr *2 + 1];
 
-            if (AnswerText.Text.ToLower() == Words[qnr + 1].ToLower())
+            if (AnswerText.Text.ToLower() == Words[qnr *2 + 1].ToLower())
             {
                 CRICR.Text = "Correct!";
             }
@@ -78,6 +85,25 @@ namespace Traningapp
             CA.Visible = false;
             Check.Visible = true;
             LoadNext();
+        }
+
+        private void againb_Click(object sender, EventArgs e)
+        {
+            qnr = 0;
+            LoadNext();
+        }
+
+        private void newt_Click(object sender, EventArgs e)
+        {
+            openFile.ShowDialog();
+            Words = File.ReadAllLines(openFile.FileName);
+
+            qnr = 0;
+            LoadNext();
+            PathButton.Visible = false;
+            AnswerText.Visible = true;
+            Check.Visible = true;
+            Question.Visible = true; 
         }
     }
 }
