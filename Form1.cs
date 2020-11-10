@@ -36,8 +36,8 @@ namespace Traningapp
 
         private void LoadNext()
         {
-            Question.Text = Words[qnr * 2];
-            qnr++;
+            Question.Text = Words[qnr * 2];  
+
         }
 
         private void AnswerText_TextChanged(object sender, EventArgs e)
@@ -52,13 +52,33 @@ namespace Traningapp
             CRA.Visible = true;
             AnswerText.Enabled = false;
             Check.Visible = false;
+            CA.Visible = true;
+            Nextb.Visible = true;
+            CRA.Text = Words[qnr + 1];
 
-
-            if (AnswerText.Text.ToLower() == Words[qnr * 2 + 1].ToLower())
+            if (AnswerText.Text.ToLower() == Words[qnr + 1].ToLower())
             {
-
+                CRICR.Text = "Correct!";
             }
 
+            else
+            {
+                CRICR.Text = "Incorrect";
+            }
+            qnr++;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Nextb.Visible = false;
+            CRA.Visible = false;
+            CRICR.Visible = false;
+            AnswerText.Enabled = true;
+            AnswerText.ResetText();
+            CA.Visible = false;
+            Check.Visible = true;
+            LoadNext();
+            //Question.Text = Words[qnr * 2];
         }
     }
 }

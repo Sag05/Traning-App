@@ -35,6 +35,8 @@
             this.CRICR = new System.Windows.Forms.Label();
             this.CRA = new System.Windows.Forms.Label();
             this.Check = new System.Windows.Forms.Button();
+            this.CA = new System.Windows.Forms.Label();
+            this.Nextb = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // openFile
@@ -82,7 +84,7 @@
             // CRA
             // 
             this.CRA.AutoSize = true;
-            this.CRA.Location = new System.Drawing.Point(116, 152);
+            this.CRA.Location = new System.Drawing.Point(202, 152);
             this.CRA.Name = "CRA";
             this.CRA.Size = new System.Drawing.Size(79, 13);
             this.CRA.TabIndex = 5;
@@ -99,11 +101,34 @@
             this.Check.UseVisualStyleBackColor = true;
             this.Check.Click += new System.EventHandler(this.Check_Click);
             // 
+            // CA
+            // 
+            this.CA.AutoSize = true;
+            this.CA.Location = new System.Drawing.Point(120, 152);
+            this.CA.Name = "CA";
+            this.CA.Size = new System.Drawing.Size(82, 13);
+            this.CA.TabIndex = 7;
+            this.CA.Text = "Correct Answer:";
+            this.CA.Visible = false;
+            // 
+            // Nextb
+            // 
+            this.Nextb.Location = new System.Drawing.Point(12, 176);
+            this.Nextb.Name = "Nextb";
+            this.Nextb.Size = new System.Drawing.Size(75, 23);
+            this.Nextb.TabIndex = 8;
+            this.Nextb.Text = "Next";
+            this.Nextb.UseVisualStyleBackColor = true;
+            this.Nextb.Visible = false;
+            this.Nextb.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(687, 261);
+            this.Controls.Add(this.Nextb);
+            this.Controls.Add(this.CA);
             this.Controls.Add(this.Check);
             this.Controls.Add(this.CRA);
             this.Controls.Add(this.CRICR);
@@ -111,7 +136,7 @@
             this.Controls.Add(this.Question);
             this.Controls.Add(this.PathButton);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Trainer";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,6 +151,8 @@
         private System.Windows.Forms.Label CRICR;
         private System.Windows.Forms.Label CRA;
         private System.Windows.Forms.Button Check;
+        private System.Windows.Forms.Label CA;
+        private System.Windows.Forms.Button Nextb;
     }
 }
 
