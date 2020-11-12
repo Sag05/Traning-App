@@ -42,6 +42,9 @@ namespace Traningapp
 
         private void LoadNext()
         {
+            alb.Visible = true;
+            rb.Visible = true;
+            fab.Visible = true;
 
             //checks if next line is empty
             if (Words[qnr * 2] == "") 
@@ -50,15 +53,20 @@ namespace Traningapp
                 newt.Visible = true;
             }
 
-            if (alb.Checked)
+            if (fab.Checked)
             {
-                Question.Text = Words[qnr * 2];
+                //Question.Text = Words[qnr * 2];
             }
 
             if (rb.Checked)
             {
                 rand = random.Next(Words.Length);
                 Question.Text = Words[rand];
+            }
+
+            else
+            {
+                Question.Text = Words[qnr * 2];
             }
 
         }
@@ -70,19 +78,19 @@ namespace Traningapp
 
         private void Check_Click(object sender, EventArgs e)
         {
-            LoadNext();
             CRICR.Visible = true;
-            CRA.Visible = true;
             AnswerText.Enabled = false;
             Check.Visible = false;
-            CA.Visible = true;
             Nextb.Visible = true;
-            CRA.Text = Words[qnr *2 + 1];
+            alb.Visible = false;
+            rb.Visible = false;
+            fab.Visible = false;
+
 
             //checks if it should be using the same order as in txt file
             if (alb.Checked)
             {
-
+                CRA.Text = Words[qnr * 2 + 1];
                 if (AnswerText.Text.ToLower() == Words[qnr * 2 + 1].ToLower())
                 {
                     CRICR.Text = "Correct!";
@@ -90,6 +98,8 @@ namespace Traningapp
 
                 else
                 {
+                    CA.Visible = true;
+                    CRA.Visible = true;
                     CRICR.Text = "Incorrect";
                 }
 
@@ -102,6 +112,7 @@ namespace Traningapp
             {
                 if (rand % 2 == 0)
                 {
+                    CRA.Text = Words[rand + 1];
                     if (AnswerText.Text.ToLower() == Words[rand + 1].ToLower())
                     {
                         CRICR.Text = "Correct!";
@@ -109,6 +120,8 @@ namespace Traningapp
 
                     else
                     {
+                        CA.Visible = true;
+                        CRA.Visible = true;
                         CRICR.Text = "Incorrect";
                     }
                 }
@@ -117,11 +130,14 @@ namespace Traningapp
                 {
                     if (AnswerText.Text.ToLower() == Words[rand - 1].ToLower())
                     {
+                        CRA.Text = Words[rand - 1];
                         CRICR.Text = "Correct!";
                     }
 
                     else
                     {
+                        CA.Visible = true;
+                        CRA.Visible = true;
                         CRICR.Text = "Incorrect";
                     }
                 }
