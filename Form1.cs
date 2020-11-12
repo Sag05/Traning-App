@@ -132,9 +132,9 @@ namespace Traningapp
 
                 else
                 {
+                    CRA.Text = Words[rand - 1];
                     if (AnswerText.Text.ToLower() == Words[rand - 1].ToLower())
                     {
-                        CRA.Text = Words[rand - 1];
                         CRICR.Text = "Correct!";
                         CRICR.ForeColor = Color.ForestGreen;
                     }
