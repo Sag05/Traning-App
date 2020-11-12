@@ -39,6 +39,9 @@
             this.Nextb = new System.Windows.Forms.Button();
             this.againb = new System.Windows.Forms.Button();
             this.newt = new System.Windows.Forms.Button();
+            this.rb = new System.Windows.Forms.RadioButton();
+            this.alb = new System.Windows.Forms.RadioButton();
+            this.fab = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // openFile
@@ -149,11 +152,47 @@
             this.newt.Visible = false;
             this.newt.Click += new System.EventHandler(this.newt_Click);
             // 
+            // rb
+            // 
+            this.rb.AutoSize = true;
+            this.rb.Location = new System.Drawing.Point(430, 68);
+            this.rb.Name = "rb";
+            this.rb.Size = new System.Drawing.Size(65, 17);
+            this.rb.TabIndex = 11;
+            this.rb.Text = "Random";
+            this.rb.UseVisualStyleBackColor = true;
+            this.rb.CheckedChanged += new System.EventHandler(this.rb_CheckedChanged);
+            // 
+            // alb
+            // 
+            this.alb.AutoSize = true;
+            this.alb.Location = new System.Drawing.Point(430, 91);
+            this.alb.Name = "alb";
+            this.alb.Size = new System.Drawing.Size(66, 17);
+            this.alb.TabIndex = 12;
+            this.alb.TabStop = true;
+            this.alb.Text = "After List";
+            this.alb.UseVisualStyleBackColor = true;
+            // 
+            // fab
+            // 
+            this.fab.AutoSize = true;
+            this.fab.Location = new System.Drawing.Point(431, 114);
+            this.fab.Name = "fab";
+            this.fab.Size = new System.Drawing.Size(84, 17);
+            this.fab.TabIndex = 13;
+            this.fab.TabStop = true;
+            this.fab.Text = "Flip Answers";
+            this.fab.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(527, 161);
+            this.Controls.Add(this.fab);
+            this.Controls.Add(this.alb);
+            this.Controls.Add(this.rb);
             this.Controls.Add(this.newt);
             this.Controls.Add(this.againb);
             this.Controls.Add(this.Nextb);
@@ -184,6 +223,9 @@
         private System.Windows.Forms.Button Nextb;
         private System.Windows.Forms.Button againb;
         private System.Windows.Forms.Button newt;
+        private System.Windows.Forms.RadioButton rb;
+        private System.Windows.Forms.RadioButton alb;
+        private System.Windows.Forms.RadioButton fab;
     }
 }
 

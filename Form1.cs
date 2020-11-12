@@ -13,9 +13,11 @@ namespace Traningapp
 {
     public partial class Form1 : Form
     {
+
+        Random random = new Random();
         string[] Words;
         int qnr = 0 ;
-
+        int rand = 0;
         public Form1()
         {
             InitializeComponent();
@@ -33,18 +35,32 @@ namespace Traningapp
             AnswerText.Visible = true;
             Check.Visible = true;
             Question.Visible = true;
+            
+            rand = random.Next(Words.Length);
 
         }
 
         private void LoadNext()
         {
-            Question.Text = Words[qnr * 2];
-            if (Words[qnr * 2] == "") ;
+
+            //checks if next line is empty
+            if (Words[qnr * 2] == "") 
             {
                 againb.Visible = true;
                 newt.Visible = true;
 
             }
+
+            if (alb.Checked)
+            {
+                Question.Text = Words[qnr * 2];
+            }
+
+            if (rb.Checked)
+            {
+                Question.Text = Words[rand];
+            }
+
         }
 
         private void AnswerText_TextChanged(object sender, EventArgs e)
@@ -63,16 +79,60 @@ namespace Traningapp
             Nextb.Visible = true;
             CRA.Text = Words[qnr *2 + 1];
 
-            if (AnswerText.Text.ToLower() == Words[qnr *2 + 1].ToLower())
+            //checks if it should be using the same order as in txt file
+            if (alb.Checked)
             {
-                CRICR.Text = "Correct!";
+
+                if (AnswerText.Text.ToLower() == Words[qnr * 2 + 1].ToLower())
+                {
+                    CRICR.Text = "Correct!";
+                }
+
+                else
+                {
+                    CRICR.Text = "Incorrect";
+                }
+
+                qnr++;
+
+            }
+            
+            //checks if it should be in a reandom order 
+            if (rb.Checked)
+            {
+                if (rand % 2 == 0)
+                {
+                    if (AnswerText.Text.ToLower() == Words[rand + 1].ToLower())
+                    {
+                        CRICR.Text = "Correct!";
+                    }
+
+                    else
+                    {
+                        CRICR.Text = "Incorrect";
+                    }
+                }
+
+                else
+                {
+                    if (AnswerText.Text.ToLower() == Words[rand - 1].ToLower())
+                    {
+                        CRICR.Text = "Correct!";
+                    }
+
+                    else
+                    {
+                        CRICR.Text = "Incorrect";
+                    }
+                }
             }
 
-            else
+            //switches place between answer and question (not done)
+
+            if (fab.Checked)
             {
-                CRICR.Text = "Incorrect";
+
             }
-            qnr++;
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -104,6 +164,11 @@ namespace Traningapp
             AnswerText.Visible = true;
             Check.Visible = true;
             Question.Visible = true; 
+        }
+
+        private void rb_CheckedChanged(object sender, EventArgs e)
+        {
+        
         }
     }
 }
