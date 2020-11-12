@@ -186,6 +186,7 @@
             this.fab.TabStop = true;
             this.fab.Text = "Flip Answers";
             this.fab.UseVisualStyleBackColor = true;
+            this.fab.Visible = false;
             // 
             // Form1
             // 
