@@ -94,6 +94,7 @@ namespace Traningapp
                 if (AnswerText.Text.ToLower() == Words[qnr * 2 + 1].ToLower())
                 {
                     CRICR.Text = "Correct!";
+                    CRICR.ForeColor = Color.ForestGreen;
                 }
 
                 else
@@ -101,6 +102,7 @@ namespace Traningapp
                     CA.Visible = true;
                     CRA.Visible = true;
                     CRICR.Text = "Incorrect";
+                    CRICR.ForeColor = Color.Red;
                 }
 
                 qnr++;
@@ -116,6 +118,7 @@ namespace Traningapp
                     if (AnswerText.Text.ToLower() == Words[rand + 1].ToLower())
                     {
                         CRICR.Text = "Correct!";
+                        CRICR.ForeColor = Color.ForestGreen;
                     }
 
                     else
@@ -123,6 +126,7 @@ namespace Traningapp
                         CA.Visible = true;
                         CRA.Visible = true;
                         CRICR.Text = "Incorrect";
+                        CRICR.ForeColor = Color.Red;
                     }
                 }
 
@@ -132,6 +136,7 @@ namespace Traningapp
                     {
                         CRA.Text = Words[rand - 1];
                         CRICR.Text = "Correct!";
+                        CRICR.ForeColor = Color.ForestGreen;
                     }
 
                     else
@@ -139,6 +144,7 @@ namespace Traningapp
                         CA.Visible = true;
                         CRA.Visible = true;
                         CRICR.Text = "Incorrect";
+                        CRICR.ForeColor = Color.Red;
                     }
                 }
             }

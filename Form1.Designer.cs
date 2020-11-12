@@ -91,6 +91,7 @@
             // CRA
             // 
             this.CRA.AutoSize = true;
+            this.CRA.ForeColor = System.Drawing.Color.ForestGreen;
             this.CRA.Location = new System.Drawing.Point(204, 72);
             this.CRA.Name = "CRA";
             this.CRA.Size = new System.Drawing.Size(79, 13);
@@ -112,6 +113,7 @@
             // CA
             // 
             this.CA.AutoSize = true;
+            this.CA.ForeColor = System.Drawing.Color.ForestGreen;
             this.CA.Location = new System.Drawing.Point(116, 72);
             this.CA.Name = "CA";
             this.CA.Size = new System.Drawing.Size(82, 13);
