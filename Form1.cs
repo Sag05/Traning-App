@@ -36,7 +36,7 @@ namespace Traningapp
             Check.Visible = true;
             Question.Visible = true;
             
-            rand = random.Next(Words.Length);
+ 
 
         }
 
@@ -48,7 +48,6 @@ namespace Traningapp
             {
                 againb.Visible = true;
                 newt.Visible = true;
-
             }
 
             if (alb.Checked)
@@ -58,6 +57,7 @@ namespace Traningapp
 
             if (rb.Checked)
             {
+                rand = random.Next(Words.Length);
                 Question.Text = Words[rand];
             }
 
